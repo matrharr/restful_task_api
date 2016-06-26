@@ -29,6 +29,7 @@ class TasksController < ApplicationController
     if @task.update(task_params)
       render json: @task
     else
+      #better error handling, this is blank atm
       render json: @task.errors
     end
 
@@ -36,10 +37,11 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find(params[:id])
-    @user_task = @task.user_tasks.where(task_id: @task.id)
+    # @user_task = @task.user_tasks.where(task_id: @task.id)
     if @task.destroy
-      render json: "Deleted!"
+      render json: "Task has been deleted!"
     else
+      #better error handling, this is blank atm
       render json: @task.errors
     end
   end
