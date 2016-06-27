@@ -1,19 +1,25 @@
 class SessionsController < ApplicationController
 
-
-  def show
-
-  end
+  # def show
+  #   @user = User.last
+  #   render json: @user
+  # end
 
   def create
-    user = User.from_omniauth(env['omniauth.auth'])
-    session[:user_id] = user.id
-    redirect_to root_url
+    @user = User.from_omniauth(request.env['omniauth.auth'])
+    if @user.save
+      session[:user_id] = @user.id
+      render json: @user
+    else
+      render text: "User could not save"
+    end
+
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url
+    render text: "Session deleted"
   end
+
 
 end
