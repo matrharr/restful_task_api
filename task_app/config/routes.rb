@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :tasks, except: [:new, :edit]
   resources :users, only: [:create]
+  resources :user_tasks, only: [:create]
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
