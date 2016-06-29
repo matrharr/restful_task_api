@@ -20,7 +20,7 @@ module Api
           render json: @task
         else
           #better error handling, this is blank atm
-          render text: @task.errors
+          render json: @task.errors
         end
 
       end

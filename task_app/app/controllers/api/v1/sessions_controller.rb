@@ -9,13 +9,13 @@ module Api
       # end
 
       def create
-        p request.env['omniauth.auth']
+
         @user = User.from_omniauth(request.env['omniauth.auth'])
-        p @user
+
         if @user.save
           render json: @user
         else
-          render text: "User could not save"
+          render json: @user.errors
         end
 
       end
