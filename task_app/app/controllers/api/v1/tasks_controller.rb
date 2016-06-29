@@ -1,6 +1,8 @@
 module Api
   module V1
     class TasksController < ApplicationController
+      # include ActionController::MimeResponds
+      # respond_to :json
 
       def index
         @tasks = Task.all
@@ -9,7 +11,7 @@ module Api
 
       def show
         @task = Task.find(params[:id])
-        render json: @task, status: :created
+        render json: @task, status:200
       end
 
       def create
