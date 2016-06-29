@@ -15,14 +15,13 @@ module Api
       end
 
       def create
-        #curl -X POST -d "title=Laundry&description=Go to Sunny Laundry and remeber to bring all the pillowcases" http://localhost:3000/tasks
+        #curl -X POST -d "title=Laundry&description=Go to Sunny Laundry and remeber to bring all the pillowcases" http://localhost:3000/api/v1/tasks
 
         @task = Task.new(task_params)
         if @task.save
-          render json: @task
+          render json: @task, status: 201
         else
-          #better error handling, this is blank atm
-          render json: @task.errors
+          render json: { errors: @task.errors }, status: 422
         end
 
       end
@@ -33,8 +32,7 @@ module Api
         if @task.update(task_params)
           render json: @task
         else
-          #better error handling, this is blank atm
-          render json: @task.errors
+          render json: { errors: @task.errors }, status: 422
         end
 
       end
@@ -42,19 +40,15 @@ module Api
       def destroy
         @task = Task.find(params[:id])
         # @user_task = @task.user_tasks.where(task_id: @task.id)
-        if @task.destroy
-          render json: "Task has been deleted!"
-        else
-          #better error handling, this is blank atm
-          render json: @task.errors
-        end
+        @task.destroy
+        head 204
       end
 
     private
 
       def task_params
         # how to format curl request to use require(:task) here
-        params.permit(:title, :description)
+        params.require(:task).permit(:title, :description)
       end
 
     end
