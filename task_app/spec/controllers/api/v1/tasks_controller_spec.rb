@@ -2,8 +2,6 @@ require 'spec_helper'
 require 'rails_helper'
 
 describe Api::V1::TasksController do
-  before(:each) { request.headers['Accept'] = "localhost:3000/api/v1, #{Mime::JSON}" }
-  before(:each) { request.headers['Content-Type'] = Mime::JSON.to_s }
 
   describe "GET #show" do
     before(:each) do
