@@ -13,7 +13,6 @@ describe Api::V1::UsersController do
 
       it "renders the json of user record just created" do
         user_response = json_response
-        p user_response
         expect(user_response[:name]).to eql @user_attributes[:name]
       end
 

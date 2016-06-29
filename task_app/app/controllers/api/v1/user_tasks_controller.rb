@@ -5,16 +5,18 @@ module Api
 
       def create
         @user_task = UserTask.new(user_task_params)
+        p user_task_params
+
         if @user_task.save
           render json: @user_task
         else
-          render json: @user_task.errors
+          render json: {errors:@user_task.errors}, status: 422
         end
       end
 
       private
         def user_task_params
-          params.permit(:user_id, :task_id)
+          params.require(:user_task).permit(:user_id, :task_id)
         end
 
     end
