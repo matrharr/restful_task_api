@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       match 'auth/failure', to: redirect('/'), via: [:get]
-      match 'signout', to: 'sessions#destroy', as: 'signout', via: [:delete]
-      # match 'auth/:provider/callback', to: 'sessions#show', via: [:get]
+      match 'auth/:provider/callback', to: 'users#create', via: [:post]
       resources :tasks, except: [:new, :edit]
       resources :users, only: [:create]
       resources :user_tasks, only: [:create]

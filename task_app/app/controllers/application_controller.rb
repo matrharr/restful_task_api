@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  # protect_from_forgery with: :null_session
 
 private
   def current_user
