@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
-      match 'auth/:provider/callback', to: 'sessions#create', via: [:get]
       match 'auth/failure', to: redirect('/'), via: [:get]
       match 'signout', to: 'sessions#destroy', as: 'signout', via: [:delete]
       # match 'auth/:provider/callback', to: 'sessions#show', via: [:get]
@@ -14,6 +13,7 @@ Rails.application.routes.draw do
       resources :user_tasks, only: [:create]
     end
   end
+  match 'auth/:provider/callback', to: 'sessions#create', via: [:get]
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
