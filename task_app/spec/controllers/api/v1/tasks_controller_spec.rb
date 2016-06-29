@@ -2,12 +2,13 @@ require 'spec_helper'
 require 'rails_helper'
 
 describe Api::V1::TasksController do
-  before(:each) { request.headers['Accept'] = "localhost:3000/api/v1" }
+  before(:each) { request.headers['Accept'] = "localhost:3000/api/v1, #{Mime::JSON}" }
+  before(:each) { request.headers['Content-Type'] = Mime::JSON.to_s }
 
   describe "GET #show" do
     before(:each) do
       @task = FactoryGirl.create :task
-      get :show, id: @task.id, format: :json
+      get :show, id: @task.id
     end
 
     it "returns the information of a task" do
@@ -23,7 +24,7 @@ describe Api::V1::TasksController do
     context "when is successfully created" do
       before(:each) do
         @task_attributes = FactoryGirl.attributes_for :task
-        post :create, { task: @task_attributes }, format: :json
+        post :create, { task: @task_attributes }
       end
 
       it "renders the json of task record just created" do
@@ -37,7 +38,7 @@ describe Api::V1::TasksController do
     context "when creation is unsuccessful" do
       before(:each) do
         @invalid_task_attributes = { description: "a valid description"}
-        post :create, { task: @invalid_task_attributes }, format: :json
+        post :create, { task: @invalid_task_attributes }
       end
 
       it "renders an errors json" do
@@ -60,7 +61,7 @@ describe Api::V1::TasksController do
     context "when task is successfully updated" do
       before(:each) do
         @task = FactoryGirl.create :task
-        patch :update, { id: @task.id, task: { title: "Clean the carpet" } }, format: :json
+        patch :update, { id: @task.id, task: { title: "Clean the carpet" } }
       end
 
       it "renders the json representation for the updated task" do
@@ -75,7 +76,7 @@ describe Api::V1::TasksController do
 
       before(:each) do
         @task = FactoryGirl.create :task
-        patch :update, { id: @task.id, task: {title: "thisisaninvalidtitlebecauseitistoolong"} }, format: :json
+        patch :update, { id: @task.id, task: {title: "thisisaninvalidtitlebecauseitistoolong"} }
       end
 
       it "render an errors json" do
@@ -101,7 +102,7 @@ describe Api::V1::TasksController do
   describe "DELETE #destroy" do
     before(:each) do
       @task = FactoryGirl.create :task
-      delete :destroy, { id: @task.id }, format: :json
+      delete :destroy, { id: @task.id }
     end
 
     # it { should respond_with 204 }
