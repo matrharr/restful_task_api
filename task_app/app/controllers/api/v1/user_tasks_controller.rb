@@ -5,7 +5,6 @@ module Api
 
       def create
         @user_task = UserTask.new(user_task_params)
-        p user_task_params
 
         if @user_task.save
           render json: @user_task
