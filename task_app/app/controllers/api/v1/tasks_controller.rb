@@ -2,21 +2,21 @@ module Api
   module V1
     class TasksController < ApplicationController
       # include ActionController::MimeResponds
-      # respond_to :json
+      respond_to :json
 
       def index
         @tasks = Task.all
-        render json: @tasks
+        respond_with(@tasks)
       end
 
       def show
         @task = Task.find(params[:id])
-        render json: @task, status:200
+        respond_with(@task)
       end
 
       def create
         #curl -X POST -d "title=Laundry&description=Go to Sunny Laundry and remeber to bring all the pillowcases" http://localhost:3000/api/v1/tasks
-
+        p task_params
         @task = Task.new(task_params)
         if @task.save
           render json: @task, status: 201

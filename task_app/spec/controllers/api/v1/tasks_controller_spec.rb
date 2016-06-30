@@ -1,8 +1,8 @@
 require 'spec_helper'
 require 'rails_helper'
 
-describe Api::V1::TasksController do
 
+describe Api::V1::TasksController do
   describe "GET #show" do
     before(:each) do
       @task = FactoryGirl.create :task

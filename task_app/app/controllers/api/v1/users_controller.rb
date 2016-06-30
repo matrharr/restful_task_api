@@ -3,20 +3,42 @@ module Api
     class UsersController < ApplicationController
 
 
-      def create_fb
-        @user = User.from_omniauth(request.env['omniauth.auth'])
-        if @user.save
-          p "*" * 80
-          render json: @user, status: 201
-        else
-          p "no" * 80
-          render json: {errors:@user.errors}, status: 422
+      def via_facebook_token
+
+        access_token = params['access-token']
+
+        # make request to facebook api
+        uri = URI("https://graph.facebook.com/v2.6/me?access_token=#{access_token}&fields=name%2Cemail%2Cid&format=json&method=get&pretty=0&suppress_http_code=1")
+
+        user_json = Net::HTTP.get_response(uri).body
+        hash = JSON.parse(user_json)
+        hash.keys.each do |k|
+          if k == 'id'
+            hash['facebook_id'] = hash[k]
+            hash.delete(k)
+          end
+
         end
+        p hash
+        @user = User.new(hash)
+        if @user.save
+          render json: @user
+        else
+          render json: {errors: @user.errors}
+        end
+
+        # if @user.save
+
+        #   render json: @user, status: 201
+        # else
+
+        #   render json: {errors:@user.errors}, status: 422
+        # end
       end
 
 
       def create
-        p user_params
+
         @user = User.new(user_params)
 
         if @user.save
