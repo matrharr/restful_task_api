@@ -19,7 +19,7 @@ module Api
           end
 
         end
-        p hash
+
         @user = User.new(hash)
         if @user.save
           render json: @user
@@ -27,18 +27,11 @@ module Api
           render json: {errors: @user.errors}
         end
 
-        # if @user.save
-
-        #   render json: @user, status: 201
-        # else
-
-        #   render json: {errors:@user.errors}, status: 422
-        # end
       end
 
 
       def create
-
+        # curl -X POST -d "user[name]=matt&user[email]=matrharr@gmail.com" http://localhost:3000/v1/tasks
         @user = User.new(user_params)
 
         if @user.save
@@ -51,7 +44,7 @@ module Api
 
       private
         def user_params
-          params.permit(:name, :email)
+          params.require(:user).permit(:name, :email)
         end
 
     end

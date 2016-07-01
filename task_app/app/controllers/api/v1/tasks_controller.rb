@@ -15,7 +15,8 @@ module Api
       end
 
       def create
-        #curl -X POST -d "title=Laundry&description=Go to Sunny Laundry and remeber to bring all the pillowcases" http://localhost:3000/api/v1/tasks
+        # curl -X POST -d "task[title]=Laundry&task[description]=Go to Sunny Laundry and remeber to bring all the pillowcases" http://localhost:3000/v1/tasks
+        p params
         p task_params
         @task = Task.new(task_params)
         if @task.save
@@ -48,7 +49,7 @@ module Api
 
       def task_params
         # how to format curl request to use require(:task) here
-        params.permit(:title, :description)
+        params.require(:task).permit(:title, :description)
       end
 
     end
