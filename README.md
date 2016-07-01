@@ -1,6 +1,6 @@
 **TaskMeAnything**
 
-TaskMeAnything is a collaborative app that allows users to create and assign tasks and to each other
+TaskMeAnything is a collaborative app that allows users to create and assign tasks to each other
 ----
 Routes
 
