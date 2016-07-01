@@ -41,4 +41,4 @@
 
 * **Notes:**
 
-  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._>
+  To create a user on TaskMeAnything you must pass a valid Facebook User Access token. You can generate your access token [here](https://developers.facebook.com/tools/explorer/145634995501895/)
