@@ -46,7 +46,7 @@
 
 * **Sample Call:**
 
-  `curl -X POST -d "name=Matt&email=matrharr@gmail.com" http://localhost:3000/v1/users`
+  `curl -X POST -d "name=Matt&email=matrharr@gmail.com" http://taskmeanything.herokuapp.com/v1/users`
 
 * **Notes:**
 

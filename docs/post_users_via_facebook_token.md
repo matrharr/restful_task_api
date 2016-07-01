@@ -39,7 +39,7 @@
 
 * **Sample Call:**
 
-  curl -X POST -d "access-token=EAACEdEose0cBAIS81Of" http://localhost:3000/v1/users
+  `curl -X POST -d "access-token=EAACEdEose0cBAIS81Of" http://taskmeanything.herokuapp.com/v1/users`
 
 * **Notes:**
 

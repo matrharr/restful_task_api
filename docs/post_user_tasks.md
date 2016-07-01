@@ -46,4 +46,4 @@
 
 * **Sample Call:**
 
-  `curl -X POST -d "user_id=1&task_id=1" http://localhost:3000/v1/user_tasks`
+  `curl -X POST -d "user_id=1&task_id=1" http://taskmeanything.herokuapp.com/v1/user_tasks`

@@ -48,5 +48,5 @@
 
 * **Sample Call:**
 
-  `curl -X POST -d "title=Laundry&description=Go to Sunny Laundry and remeber to bring all the pillowcases" http://localhost:3000/v1/tasks
+  `curl -X POST -d "title=Laundry&description=Go to Sunny Laundry and remeber to bring all the pillowcases" http://taskmeanything.herokuapp.com/v1/tasks
 `

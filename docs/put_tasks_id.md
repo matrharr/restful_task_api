@@ -37,6 +37,6 @@
 
 * **Sample Call:**
 
-  `curl -X PUT -d "title=Learn React&description=Sit down and start learning react!" http://localhost:3000/v1/tasks
+  `curl -X PUT -d "title=Learn React&description=Sit down and start learning react!" http://taskmeanything.herokuapp.com/v1/tasks
 
 * **Notes:**
