@@ -18,7 +18,7 @@ module TaskApp
     config.session_store
 
     #changed from true
-    config.api_only = false
+    config.api_only = true
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
