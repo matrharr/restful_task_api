@@ -34,7 +34,7 @@
 
 * **Error Response:**
 
-  * **Code:** 422 UNAUTHORIZED <br />
+  * **Code:** 400 Bad Request <br />
     **Content:** `{
   "errors": {
     "name": [

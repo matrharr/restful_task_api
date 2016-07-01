@@ -27,6 +27,12 @@
   "updated_at": "2016-06-30T22:56:02.590Z"
 }`
 
+* **Error Response:**
+
+  Bad request
+  * **Code:** 404 <br />
+
+
 * **Sample Call:**
 
   `curl -X GET http://taskmeanything.herokuapp.com/v1/tasks/1`

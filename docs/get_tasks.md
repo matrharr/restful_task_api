@@ -37,6 +37,9 @@
   }
 ]`
 
+* **Error Response:**
+
+  * **Code:** 404 Bad request<br />
 
 * **Sample Call:**
 

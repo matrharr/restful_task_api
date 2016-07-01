@@ -29,13 +29,11 @@
 
 * **Error Response:**
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
-
-  OR
-
-  * **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
+  * **Code:** 500 UNAUTHORIZED <br />
+    **Content:** `{
+  "status": "500",
+  "error": "Internal Server Error"
+}`
 
 * **Sample Call:**
 

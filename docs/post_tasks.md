@@ -36,7 +36,7 @@
 
 * **Error Response:**
 
-  * **Code:** 401 UNAUTHORIZED <br />
+  * **Code:** 400 Bad Request <br />
     **Content:** `{
   "errors": {
     "title": [
