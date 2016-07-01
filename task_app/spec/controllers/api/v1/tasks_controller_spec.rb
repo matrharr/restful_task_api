@@ -14,7 +14,6 @@ describe Api::V1::TasksController do
       expect(task_response[:title]).to eql @task.title
     end
 
-    # it { should respond_with 200 }
   end
 
   describe " POST #create" do
@@ -30,7 +29,6 @@ describe Api::V1::TasksController do
         expect(task_response[:title]).to eql @task_attributes[:title]
       end
 
-      # it { should respond_with 201 }
     end
 
     context "when creation is unsuccessful" do
@@ -49,7 +47,6 @@ describe Api::V1::TasksController do
         expect(task_response[:errors][:title]).to include "can't be blank"
       end
 
-      # it { should respond_with 422 }
     end
 
   end
@@ -67,7 +64,6 @@ describe Api::V1::TasksController do
         expect(task_response[:title]).to eql "Clean the carpet"
       end
 
-      # it { should respond_with 200 }
     end
 
     context "when update is unsuccessful" do
@@ -92,7 +88,6 @@ describe Api::V1::TasksController do
         expect(task_response[:errors][:title]).to include "is too long (maximum is 20 characters)"
       end
 
-      # it { should respond_with 422 }
 
     end
   end
@@ -102,9 +97,6 @@ describe Api::V1::TasksController do
       @task = FactoryGirl.create :task
       delete :destroy, { id: @task.id }
     end
-
-    # it { should respond_with 204 }
-    # 204 means no content
 
   end
 

@@ -4,7 +4,6 @@ module Api
     class UserTasksController < ApplicationController
 
       def create
-        # curl -X POST -d "user_task[user_id]=1&user_task[task_id]=1" http://localhost:3000/v1/tasks
         @user_task = UserTask.new(user_task_params)
 
         if @user_task.save

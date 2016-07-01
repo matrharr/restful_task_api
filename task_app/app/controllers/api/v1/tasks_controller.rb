@@ -1,17 +1,15 @@
 module Api
   module V1
     class TasksController < ApplicationController
-      # include ActionController::MimeResponds
-      respond_to :json
 
       def index
         @tasks = Task.all
-        respond_with(@tasks)
+        render json: @tasks
       end
 
       def show
         @task = Task.find(params[:id])
-        respond_with(@task)
+        render json: @task
       end
 
       def create
@@ -20,7 +18,7 @@ module Api
         p task_params
         @task = Task.new(task_params)
         if @task.save
-          render json: @task, status: 201
+          render json: @task
         else
           render json: { errors: @task.errors }, status: 422
         end
@@ -40,7 +38,6 @@ module Api
 
       def destroy
         @task = Task.find(params[:id])
-        # @user_task = @task.user_tasks.where(task_id: @task.id)
         @task.destroy
         head 204
       end
@@ -48,7 +45,6 @@ module Api
     private
 
       def task_params
-        # how to format curl request to use require(:task) here
         params.require(:task).permit(:title, :description)
       end
 

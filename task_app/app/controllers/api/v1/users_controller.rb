@@ -1,33 +1,31 @@
+require_relative '../../../helpers/application_helper'
 module Api
   module V1
     class UsersController < ApplicationController
-      respond_to :json
 
-
-
+      include ApplicationHelper
       def index
         @users = User.all
-        respond_with(@users)
+        render json: @users
       end
 
       def via_facebook_token
-
+        #grab authenticated user access token
         access_token = params['access-token']
 
         # make request to facebook api
         uri = URI("https://graph.facebook.com/v2.6/me?access_token=#{access_token}&fields=name%2Cemail%2Cid&format=json&method=get&pretty=0&suppress_http_code=1")
 
         user_json = Net::HTTP.get_response(uri).body
-        hash = JSON.parse(user_json)
-        hash.keys.each do |k|
-          if k == 'id'
-            hash['facebook_id'] = hash[k]
-            hash.delete(k)
-          end
 
-        end
+        hash = JSON.parse(user_json)
+
+        #format data for user creation
+        clean_user_data(hash)
+
 
         @user = User.new(hash)
+
         if @user.save
           render json: @user
         else
@@ -37,8 +35,8 @@ module Api
       end
 
 
+
       def create
-        # curl -X POST -d "user[name]=matt&user[email]=matrharr@gmail.com" http://localhost:3000/v1/tasks
         @user = User.new(user_params)
 
         if @user.save

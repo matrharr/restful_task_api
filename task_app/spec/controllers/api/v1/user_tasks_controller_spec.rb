@@ -16,7 +16,6 @@ describe Api::V1::UserTasksController do
         expect(user_task_response[:user_id]).to eql @user_task_attributes[:user_id]
       end
 
-      # it { should respond_with 201 }
     end
 
     context "when creation is unsuccessful" do
@@ -35,7 +34,6 @@ describe Api::V1::UserTasksController do
         expect(user_task_response[:errors][:user_id]).to include "is not a number"
       end
 
-      # it { should respond_with 422 }
     end
 
   end
