@@ -23,6 +23,9 @@
 
 * **Error Response:**
 
+  * **Code:** 410 Resource already deleted<br />
+
+  * **Code:** 404 Resource does not exist<br />
 
 * **Sample Call:**
 

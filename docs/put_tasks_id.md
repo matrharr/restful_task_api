@@ -33,7 +33,14 @@
 
 * **Error Response:**
 
-
+  * **Code:** 400 Bad Request <br />
+    **Content:** `{
+  "errors": {
+    "user_id": [
+      "can't be blank"
+    ]
+  }
+}`
 
 * **Sample Call:**
 
