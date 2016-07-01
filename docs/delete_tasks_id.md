@@ -26,6 +26,6 @@
 
 * **Sample Call:**
 
-  curl -X DELETE -d "id=1" http://localhost:3000/v1/tasks/1
+  curl -X DELETE -d "id=1" http://taskmeanything.herokuapp.com/v1/tasks/1
 
 * **Notes:**

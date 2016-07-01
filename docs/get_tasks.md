@@ -40,5 +40,5 @@
 
 * **Sample Call:**
 
-  `curl -X GET http://localhost:3000/v1/tasks`
+  `curl -X GET http://taskmeanything.herokuapp.com/v1/tasks`
 
