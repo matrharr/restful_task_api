@@ -48,7 +48,7 @@ module Api
 
       def task_params
         # how to format curl request to use require(:task) here
-        params.require(:task).permit(:title, :description)
+        params.permit(:title, :description)
       end
 
     end
