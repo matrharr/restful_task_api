@@ -16,7 +16,7 @@ describe Api::V1::UsersController do
         expect(user_response[:name]).to eql @user_attributes[:name]
       end
 
-      # it { should respond_with 201 }
+
     end
 
     context "when creation is unsuccessful" do
@@ -35,7 +35,7 @@ describe Api::V1::UsersController do
         expect(user_response[:errors][:name]).to include "can't be blank"
       end
 
-      # it { should respond_with 422 }
+
     end
   end
 
@@ -52,7 +52,7 @@ describe Api::V1::UsersController do
         expect(user_response[:name]).to eql @user_attributes[:name]
       end
 
-      # it { should respond_with 201 }
+
     end
 
     context "when creation is unsuccessful" do
@@ -71,7 +71,7 @@ describe Api::V1::UsersController do
         expect(user_response[:errors][:name]).to include "can't be blank"
       end
 
-      # it { should respond_with 422 }
+
     end
 
   end
