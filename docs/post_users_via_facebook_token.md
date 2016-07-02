@@ -23,7 +23,7 @@
   * **Code:** 200 <br />
     **Content:** `{
   "id": 1,
-  "facebook_id": "10100475964043242",
+  "facebook_id": "101004752",
   "name": "Matt Harris",
   "email": "matthew-harris@utc.edu",
   "created_at": "2016-06-30T22:14:04.036Z",
