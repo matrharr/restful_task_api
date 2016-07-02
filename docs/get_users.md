@@ -1,5 +1,7 @@
-**TaskMeAnything**
+TaskMeAnything
 ----
+
+**This route will return a JSON list of users. Simply make a GET request to return the list.**
 
 
 * **URL**

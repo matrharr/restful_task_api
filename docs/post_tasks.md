@@ -1,5 +1,7 @@
-**TaskMeAnything**
+TaskMeAnything
 ----
+
+**This route will create a new task object and return a JSON of the newly created task. Simply make a POST request and specify the required fields to create the object.**
 
 * **URL**
 

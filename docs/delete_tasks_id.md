@@ -1,6 +1,6 @@
-**Title**
+TaskMeAnything
 ----
-
+**This route will delete a task. Simply specify the task's id number in your request.**
 
 * **URL**
 
@@ -31,4 +31,4 @@
 
   curl -X DELETE -d "id=1" http://taskmeanything.herokuapp.com/v1/tasks/1
 
-* **Notes:**
+
