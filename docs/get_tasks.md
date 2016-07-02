@@ -1,6 +1,6 @@
 **TaskMeAnything**
 ----
-**This route will return a JSON list of tasks. Simply make a GET request to return the list.**
+*This route will return a JSON list of tasks. Simply make a GET request to return the list.*
 
 * **URL**
 

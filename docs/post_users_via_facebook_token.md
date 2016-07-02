@@ -1,7 +1,7 @@
-TaskMeAnything
+**TaskMeAnything**
 ----
 
-**This route will create a new user and return a JSON of the newly created task. Simply make a POST request and pass a valid Facebook user access token to create a user.**
+*This route will create a new user and return a JSON of the newly created task. Simply make a POST request and pass a valid Facebook user access token to create a user.*
 
 
 * **URL**
