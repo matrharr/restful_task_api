@@ -1,5 +1,8 @@
-**TaskMeAnything**
+TaskMeAnything
 ----
+
+**This route will a JSON task object. Simply make a GET request and specify the task id to return the JSON.**
+
 
 * **URL**
 

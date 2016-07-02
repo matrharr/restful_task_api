@@ -1,5 +1,8 @@
-**TaskMeAnything**
+TaskMeAnything
 ----
+
+**This route will create a new user and return a JSON of the newly created user. Simply make a POST request and specify the required fields to create the user.**
+
 
 * **URL**
 

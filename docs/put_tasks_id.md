@@ -1,5 +1,8 @@
-**Title**
+TaskMeAnything
 ----
+
+**This route will edit a task object and return a JSON of the newly edited task. Simply make a PUT request and specify the required fields to create the object.**
+
 
 * **URL**
 
@@ -46,4 +49,4 @@
 
   `curl -X PUT -d "title=Learn React&description=Sit down and start learning react!" http://taskmeanything.herokuapp.com/v1/tasks
 
-* **Notes:**
+

@@ -1,5 +1,8 @@
-**Title**
+TaskMeAnything
 ----
+
+**This route will create a new user and return a JSON of the newly created task. Simply make a POST request and pass a valid Facebook user access token to create a user.**
+
 
 * **URL**
 
@@ -41,4 +44,4 @@
 
 * **Notes:**
 
-  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._>
+  To create a user on TaskMeAnything you must pass a valid Facebook User Access token. You can generate your access token [here](https://developers.facebook.com/tools/explorer/145634995501895/)
