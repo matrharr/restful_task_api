@@ -1,6 +1,6 @@
-TaskMeAnything
+**TaskMeAnything**
 ----
-**This route will delete a task. Simply specify the task's id number in your request.**
+*This route will delete a task. Simply specify the task's id number in your request.*
 
 * **URL**
 
