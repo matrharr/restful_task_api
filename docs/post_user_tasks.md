@@ -1,7 +1,7 @@
 **TaskMeAnything**
 ----
 
-*This route will create assign a task to a user and return a JSON of the newly assigned task. Simply make a POST request and specify the required fields to assign the task.*
+*This route will assign a task to a user and return a JSON of the newly assigned task. Simply make a POST request and specify the required fields to assign the task.*
 
 
 * **URL**
