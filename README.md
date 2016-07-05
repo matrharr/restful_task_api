@@ -1,8 +1,9 @@
 **TaskMeAnything**
 ----
+**Base URL**
 **https://taskmeanything.herokuapp.com**
 
-*TaskMeAnything is a collaborative backend application that allows users to create and assign tasks to each other as well as easily create an account through Facebook. The following backend API endpoints return JSON responses and follow RESTful naming conventions to make them easily consumable.*
+*TaskMeAnything is a collaborative backend application that allows users to create and assign tasks to each other as well as easily create an account through Facebook. The following backend API endpoints return JSON responses and follow RESTful naming conventions to make them easily consumable. To use an endpoint, append the appropriate route to the base url. *
 
 
 Routes

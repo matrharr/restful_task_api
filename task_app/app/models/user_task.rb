@@ -6,5 +6,4 @@ class UserTask < ActiveRecord::Base
   validates :user_id, :task_id, presence: true
   validates :user_id, :task_id, numericality: { only_integer: true }
 
-
 end

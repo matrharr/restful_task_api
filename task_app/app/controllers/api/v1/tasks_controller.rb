@@ -13,9 +13,6 @@ module Api
       end
 
       def create
-        # curl -X POST -d "task[title]=Laundry&task[description]=Go to Sunny Laundry and remeber to bring all the pillowcases" http://localhost:3000/v1/tasks
-        p params
-        p task_params
         @task = Task.new(task_params)
         if @task.save
           render json: @task
